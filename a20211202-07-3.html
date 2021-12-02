@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info"></div>
+<script>
+    let age = prompt('How old are you?');
+    age = + age;
+
+    //info.innerHTML= isNaN(age) ? '請輸入年齡' : age;
+
+    //info.innerHTML= !isNaN(age) && (age>=18) ? '請進' : '請回去';
+ 
+    info.innerHTML= isNaN(age) ? '請輸入年齡' : ((age>=18) ? '請進' : '請回去');
+</script>
+</body>
+
+</html>
