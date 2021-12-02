@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="info">123</div>
+
+
+<script>
+    // global,  全域
+/*
+var
+
+1. 提升
+2. 變數會變成 window 屬性 (可能覆蓋掉原本 API 的功能)
+
+*/
+
+    console.log(a);
+
+    var a;
+    a = 100;
+    console.log(window.a);
+    
+    var alert = 123;
+    console.log(alert);
+
+</script>
+</body>
+
+</html>
