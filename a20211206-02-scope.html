@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="myInput"><br>
+
+    <button onclick="myClick()">click</button>
+
+    <div id="info"></div>
+
+<script>
+    const myInput = document.querySelector('#myInput');
+    const info = document.querySelector('#info');
+    let hi = 'Hello';
+
+    function myClick(){
+        let hi = 'my info';
+        let age = + myInput.value;
+        if(age>=18){
+            var a = 10;
+            let b = 20;
+            info.innerHTML = '請進';
+        } else {
+            var c = 30;
+            let d = 40;
+            info.innerHTML = '請回去';
+        }
+
+        console.log(age);
+        console.log(a,c);
+        console.log(hi);
+    }
+
+</script>
+</body>
+
+</html>
