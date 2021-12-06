@@ -15,13 +15,16 @@ const p1 = {
     name: 'bill',
     age: 25,
 };
+const p2 = {
+    name: 'david',
+    age: 30,
+};
 
 let {name} = p1; // 展開設定
+// ({ name }) = p2;
 
-let {name: myName, age: myAge} = p1; // 展開設定
+console.log(name);
 
-console.log({name, age});
-console.log(myName, myAge);
 </script>
 </body>
 
