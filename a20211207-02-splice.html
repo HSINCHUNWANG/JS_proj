@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+<script>
+const ar = [2,4,6,8,10,12,14,16];
+let ar2 = [...ar];
+
+let ar3 = ar2.splice(3); // 移除
+console.log(ar2);
+console.log(ar3);
+console.log('-----');
+
+ar2 = [...ar];
+ar3 = ar2.splice(3, 2); // 移除
+console.log(ar2);
+console.log(ar3);
+console.log('-----');
+
+ar2 = [...ar];
+ar3 = ar2.splice(3, 0, 'a', 'b', 'c'); // 插入
+console.log(ar2);
+console.log(ar3);
+console.log('-----');
+
+ar2 = [...ar];
+ar3 = ar2.splice(3, 2, 'a', 'b'); // 替換
+console.log(ar2);
+console.log(ar3);
+console.log('-----');
+
+</script>
+</body>
+
+</html>
