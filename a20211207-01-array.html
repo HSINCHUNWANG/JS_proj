@@ -10,18 +10,22 @@
 <body>
 
 <script>
+const ar1 = [23, 'john', true, {name:'bill'}];
 
-const p1 = {
-    name: 'bill',
-    age: 25,
-};
+for(let i=0; i<ar1.length; i++){
+    console.log(i, ar1[i]);
+}
+console.log('---');
 
-let {name, age} = p1; // 展開設定
+for(let s in ar1){
+    console.log(s, ar1[s]);
+}
+console.log('---');
 
-let {name: myName, age: myAge} = p1; // 展開設定
+for(let v of ar1){
+    console.log(v);
+}
 
-console.log({name, age});
-console.log(myName, myAge);
 </script>
 </body>
 
