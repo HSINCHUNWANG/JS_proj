@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+<script>
+const ar = [2, 3, 78, 7, 4, 15, 8, 10, 91];
+
+const ar2 = ar.filter(function(currentValue, index){
+    return currentValue % 2 === 0; // Boolean, true 要挑選的
+});
+
+const ar3 = ar.map(function(currentValue, index){
+    return currentValue * currentValue;
+});
+
+console.log(ar);
+console.log(ar2);
+console.log(ar3);
+console.log('-----');
+</script>
+</body>
+
+</html>
