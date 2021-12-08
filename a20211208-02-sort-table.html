@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+<button onclick="alphaAsc()">姓名升冪</button>
+<button onclick="alphaDesc()">姓名降冪</button>
+<button onclick="ageAsc()">年齡升冪</button>
+<button onclick="ageDesc()">年齡降冪</button>
+
+<table border="1">
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>年齡</td>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+
+<script>
+const tbody = document.querySelector('tbody');
+
+
+const people = [
+    {name: 'David', age: 28},
+    {name: 'Carl', age: 25},
+    {name: 'Bill', age: 31},
+];
+
+function alphaAsc() {
+    people.sort(function(a, b){
+        return b.name > a.name ? -1 : 1; // 名字排列
+    })
+
+    let str = '';
+    for(let p of people){
+        str += `<tr>
+        <td>${p.name}</td>
+        <td>${p.age}</td>
+    </tr>`;
+    }
+    tbody.innerHTML = str;
+}
+
+function alphaDesc() {
+    people.sort(function(a, b){
+        return b.name < a.name ? -1 : 1; // 名字排列
+    })
+
+    let str = '';
+    for(let p of people){
+        str += `<tr>
+        <td>${p.name}</td>
+        <td>${p.age}</td>
+    </tr>`;
+    }
+    tbody.innerHTML = str;
+}
+
+function ageAsc() {
+    people.sort(function(a, b){
+        return a.age - b.age;
+    })
+
+    let str = '';
+    for(let p of people){
+        str += `<tr>
+        <td>${p.name}</td>
+        <td>${p.age}</td>
+    </tr>`;
+    }
+    tbody.innerHTML = str;
+}
+
+function ageDesc() {
+    people.sort(function(a, b){
+        return b.age - a.age;
+    })
+
+    let str = '';
+    for(let p of people){
+        str += `<tr>
+        <td>${p.name}</td>
+        <td>${p.age}</td>
+    </tr>`;
+    }
+    tbody.innerHTML = str;
+}
+</script>
+</body>
+
+</html>
