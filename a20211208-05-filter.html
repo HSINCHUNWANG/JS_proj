@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+<script>
+    const people = [
+        {name: 'John', age: 31, gender: 'male'},
+        {name: 'David', age: 28, gender: 'male'},
+        {name: 'Mary', age: 27, gender: 'female'},
+        {name: 'Carl', age: 25, gender: 'male'},
+        {name: 'Flora', age: 22, gender: 'female'},
+        {name: 'Bill', age: 31, gender: 'male'},
+        {name: 'Robin', age: 31, gender: 'female'},
+        {name: 'Aaron', age: 31, gender: 'male'},
+    ];
+
+const ar2 = people.filter(function(el){
+    return el.gender==='female';
+});
+
+ar2[0].age = 99;
+console.log(people);
+console.log(ar2);
+
+
+
+console.log('-----');
+</script>
+</body>
+
+</html>
