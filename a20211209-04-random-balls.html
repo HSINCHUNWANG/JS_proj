@@ -46,10 +46,8 @@
 
     function runBalls(){
         balls.forEach( b => {
-
-            b.style.top = parseInt(b.style.top) - Math.floor(Math.random()*5) + 'px';
-
-
+            b.style.top = parseInt(b.style.top) - 2 - Math.floor(Math.random()*4) + 'px';
+            b.style.left = parseInt(b.style.left) - (Math.floor(Math.random()*5)-2) + 'px';
         });
 
         setTimeout(runBalls, 30);
