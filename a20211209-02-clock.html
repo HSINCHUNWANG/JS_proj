@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c2eaf4;
+            border: black 1px solid;
+            border-radius: 50%;
+        }
+        .hand {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        .sec-hand {
+            position: absolute;
+            width: 6px;
+            height: 280px;
+            border-radius: 3px;
+            background-color: #e92b55;
+            left: -3px;
+            top: -277px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="clock">
+        <div class="hand" id="sec_hand">
+            <div class="sec-hand"></div>
+        </div>
+    </div>
+
+
+
+<script>
+    const sec_hand = document.querySelector('#sec_hand');
+
+    sec_hand.style.transform = 'rotate(30deg)';
+
+</script>
+</body>
+
+</html>
