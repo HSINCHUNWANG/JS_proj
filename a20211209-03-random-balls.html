@@ -19,6 +19,7 @@
             height: 20px;
             border-radius: 50%;
             background-color: #e92b55;
+            border: black 1px solid;
         }
     </style>
 </head>
@@ -33,6 +34,10 @@
         b.className = 'ball';
         b.style.left = Math.floor(Math.random()*600) + 'px';
         b.style.top = Math.floor(Math.random()*600) + 'px';
+        const size = 10 + Math.floor(Math.random()*21) + 'px';
+        b.style.width = b.style.height = size;
+        // b.style.backgroundColor = `hsl(${Math.random()*360},100%,50%)`;
+        b.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
         rect.append(b);
     }
 
