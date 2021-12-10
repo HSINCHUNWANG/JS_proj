@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c2eaf4;
+            border: black 1px solid;
+            border-radius: 50%;
+        }
+        .hand {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        .tickc {
+            position: absolute;
+        }
+        .sec-hand {
+            position: absolute;
+            width: 6px;
+            height: 280px;
+            border-radius: 3px;
+            background-color: #e92b55;
+            left: -3px;
+            top: -277px;
+        }
+        .min-hand {
+            position: absolute;
+            width: 10px;
+            height: 180px;
+            border-radius: 5px;
+            background-color: #2b54e9;
+            left: -5px;
+            top: -175px;
+        }
+        .hr-hand {
+            position: absolute;
+            width: 16px;
+            height: 130px;
+            border-radius: 8px;
+            background-color: #33a810;
+            left: -8px;
+            top: -122px;
+        }
+        .tick {
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            background-color: #666666;
+            top: -300px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="info"></div>
+
+    <div class="clock">
+        <div class="hand" id="ticks_container">
+            <div class="tickc">
+                <div class="tick"></div>
+            </div>
+
+        </div>
+        <div class="hand" id="hr_hand">
+            <div class="hr-hand"></div>
+        </div>
+        <div class="hand" id="min_hand">
+            <div class="min-hand"></div>
+        </div>
+        <div class="hand" id="sec_hand">
+            <div class="sec-hand"></div>
+        </div>
+    </div>
+
+<script>
+    const tc = document.querySelector('#ticks_container');
+    const hr_hand = document.querySelector('#hr_hand');
+    const min_hand = document.querySelector('#min_hand');
+    const sec_hand = document.querySelector('#sec_hand');
+
+    let str = '';
+    for(let i=0; i<60; i++){
+        let myStyle = '';
+        if(i%5===0){
+            myStyle = 'width: 4px; height: 30px; left: -2px;';
+        }
+        str += `<div class="tickc" style="transform: rotate(${i*6}deg);">
+                <div class="tick" style="${myStyle}"></div>
+            </div>`;
+    }
+    tc.innerHTML = str;
+
+    function runClock(){
+        const now = new Date;
+        info.innerHTML = now.toString().split(' ')[4];
+
+        const ms = now.getMilliseconds();
+        const s = now.getSeconds();
+        const m = now.getMinutes();
+        const h = now.getHours();
+        sec_hand.style.transform = `rotate(${s*6 + 6/1000*ms}deg)`;
+        min_hand.style.transform = `rotate(${ m*6 }deg)`;
+        hr_hand.style.transform = `rotate(${ h*30 + .5*m }deg)`;
+
+        setTimeout(runClock, 30);
+    }
+    runClock();
+
+    /*
+    1. 分針, 時針
+    2. 秒針等速度
+    3. 刻度
+     */
+
+</script>
+</body>
+
+</html>
