@@ -29,9 +29,9 @@
             height: 60px;
             border-radius: 50%;
             background-color: #FFFFFF;
-            border: black 1px solid;
-            left: -30px;
-            top: -30px;
+            border: black 10px solid;
+            left: -40px;
+            top: -40px;
         }
         .eye-black {
             position: absolute;
@@ -54,6 +54,18 @@
 
 
     <script>
+    const e1 = document.querySelector('.eye');
+
+    window.addEventListener('mousemove', function(event){
+
+        const dx = event.pageX - 200;
+        const dy = event.pageY - 300;
+        e1.style.transform = `rotate(${Math.atan2(dy, dx)/Math.PI*180}deg)`;
+
+
+        //event.pageX
+    });
+
 
     </script>
 </body>
