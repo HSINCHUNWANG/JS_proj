@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rect {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: #c2eaf4;
+            border: black 1px solid;
+        }
+        .ball {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e92b55;
+            border: black 1px solid;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="rect">
+    </div>
+<script>
+    const rect = document.querySelector('.rect');
+
+    const ballNum = 12;
+    const angUnit = 2 * Math.PI/ballNum; // radian, 弧度
+
+
+    for(let i=0; i<ballNum; i++){
+        const b = document.createElement('div');
+        b.className = 'ball';
+        b.innerHTML = (i+1).toString();
+
+        b.style.left = 300 + 200*Math.cos(angUnit*i-Math.PI/3) + 'px';
+        b.style.top = 300 + 200*Math.sin(angUnit*i-Math.PI/3) + 'px';
+        rect.append(b);
+    }
+
+    rect.addEventListener('click', (event)=>{
+        console.log(event.target.className);  // 判斷 CSS 類別名, 字串 " ball aaa"
+        console.log(event.target.classList.contains('ball')); // 有沒有包含某個 class
+
+        if(event.target.classList.contains('ball')){
+            event.target.remove(); // 從 dom 上移除
+        }
+    });
+</script>
+</body>
+
+</html>
