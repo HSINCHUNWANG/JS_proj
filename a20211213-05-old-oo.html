@@ -18,11 +18,26 @@
         }
     }
 
+    Person.prototype.sayHi = function(){
+        return this.name + ': Hi';
+    }
+
+    // 改寫原有的功能
+    Object.prototype.toString = function(){
+        return JSON.stringify(this);
+    }
+
     const p1 = new Person('Bill', 20);
     console.log(p1.name);
     console.log(p1.sayHello());
+    console.log('' + p1);
 
 
+    // 改寫原有的功能
+    Person.prototype.toString = function(){
+        return 'hi hi~';
+    }
+    console.log('' + p1);
 </script>
 </body>
 
