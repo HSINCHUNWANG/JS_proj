@@ -12,12 +12,18 @@
 
 const xhr = new XMLHttpRequest();
 
+console.log(1);
 xhr.onload = function(){
-    console.log(xhr.responseText);
+    console.log(2);
+    // console.log(xhr.responseText);
+    console.log('ok');
 };
 
 xhr.open('GET', 'data1.json');
 xhr.send();
+
+console.log(3);
+console.log(xhr.responseText); // 拿不到資料
 
 </script>
 </body>
