@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">link1</a></li>
+      <li><a href="#">link2</a></li>
+      <li><a href="#">link3</a></li>
+      <li><a href="#">link4</a></li>
+      <li><a href="#">link5</a></li>
+    </ul>
+
+    <script>
+      // 1.DOM 選取
+
+      // NODE LIST 偽陣列 靜態
+      const allA = document.querySelectorAll("a");
+      console.log("allA:", allA);
+      //   HTML COLLECTION 動態
+      const allB = document.getElementsByTagName("a");
+      console.log("allB:", allB);
+
+      //   allA.forEach(function (aaa, index, arrayOld) {
+      //     console.log("aaa innerHTML:", aaa.innerHTML);
+      //     aaa.innerHTML = aaa.innerHTML + "hi";
+
+      //     arrayOld[index] = aaa;
+      //   });
+
+      //   2. 針對 dom 做修改
+      allA[0].innerHTML = "10";
+      allA[2].style.color = "red";
+
+      allA.forEach(function (aaa, index, arrayOld) {
+        aaa.innerHTML = "10";
+        aaa.style.color = "red";
+      });
+    </script>
+  </body>
+</html>
