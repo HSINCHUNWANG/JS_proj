@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>oop1</title>
+  </head>
+  <body>
+    <script>
+      //   function createNewPerson(name) {
+      //     var obj = {};
+      //     obj.name = name;
+      //     obj.greeting = function () {
+      //       alert("Hi! I'm " + this.name + ".");
+      //     };
+      //     return obj;
+      //   }
+
+      //   var salva = createNewPerson("salva");
+
+      //   console.log("salva.name", salva.name);
+      //   salva.greeting();
+
+      function Person(name) {
+        this.name = name;
+        this.greeting = function () {
+          alert("Hi! I'm " + this.name + ".");
+        };
+      }
+
+      var person1 = new Person("Bob");
+      console.log("person1 name", person1);
+      console.log(person1 instanceof Person);
+
+      function abc() {
+        console.log("hi");
+      }
+
+      let myAbc = abc();
+      console.log("myAbc", myAbc);
+      console.log(myAbc instanceof abc);
+      //   const newString = new String("hi");
+      //   console.log("newString", newString -> string -> object);
+    </script>
+  </body>
+</html>
